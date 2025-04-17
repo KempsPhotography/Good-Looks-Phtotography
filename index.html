@@ -132,6 +132,18 @@
     button[type="submit"]:hover {
       background-color: #333;
     }
+    .form-message {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 15px;
+      display: none;
+    }
+    .form-message.success {
+      color: green;
+    }
+    .form-message.error {
+      color: red;
+    }
   </style>
   <script>
     function showGallery(id) {
@@ -152,10 +164,30 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
+    function validateForm(event) {
+      const email = document.querySelector('input[name="email"]');
+      const messageBox = document.getElementById('form-message');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email.value)) {
+        event.preventDefault();
+        messageBox.textContent = 'Please enter a valid email address.';
+        messageBox.className = 'form-message error';
+        messageBox.style.display = 'block';
+        return false;
+      }
+
+      messageBox.textContent = 'Message sent successfully!';
+      messageBox.className = 'form-message success';
+      messageBox.style.display = 'block';
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.gallery img').forEach(img => {
         img.addEventListener('click', () => openLightbox(img.src));
       });
+      const form = document.querySelector('#contact form');
+      form.addEventListener('submit', validateForm);
     });
   </script>
 </head>
@@ -171,8 +203,6 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- ... previous content omitted for brevity ... -->
-
   <section id="contact">
     <h2>Contact Me</h2>
     <form action="https://formspree.io/f/mzzewnob" method="POST">
@@ -180,7 +210,9 @@
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Tell me what kind of shoot you're looking for" required></textarea>
       <button type="submit">Send Message</button>
+      <div id="form-message" class="form-message"></div>
     </form>
   </section>
 </body>
 </html>
+
