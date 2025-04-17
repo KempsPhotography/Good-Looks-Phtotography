@@ -65,12 +65,14 @@
       display: flex;
     }
     .gallery img {
-      width: 100%;
-      max-width: 300px;
+      width: auto;
+      max-width: 100%;
       height: auto;
-      object-fit: cover;
+      max-height: 400px;
+      object-fit: contain;
       border-radius: 8px;
-      aspect-ratio: auto;
+      display: block;
+      margin: auto;
     }
     .pricing-table, .pricing-table th, .pricing-table td {
       border: 1px solid #ccc;
@@ -199,6 +201,9 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+</body>
+</html>
+
 </body>
 </html>
 
