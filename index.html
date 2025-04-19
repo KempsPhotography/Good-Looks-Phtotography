@@ -13,9 +13,7 @@
   <link rel="icon" href="favicon.ico" />
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Helvetica Neue', sans-serif;
@@ -169,13 +167,8 @@
       display: none;
     }
 
-    .form-message.success {
-      color: green;
-    }
-
-    .form-message.error {
-      color: red;
-    }
+    .form-message.success { color: green; }
+    .form-message.error { color: red; }
 
     #lightbox {
       display: none;
@@ -261,15 +254,41 @@
     <img src="house5.jpg" alt="House 5" loading="lazy" />
   </div>
 </section>
-
 <section id="services">
   <h2>Services & Pricing</h2>
-  <!-- Portraits, Automotive, and Real Estate tables here (same as before) -->
+
+  <h3>Portrait Sessions</h3>
+  <table class="pricing-table">
+    <tr><th>Package</th><th>Time</th><th>Edited Photos</th><th>Locations</th><th>Price</th></tr>
+    <tr><td>Mini</td><td>30 min</td><td>8</td><td>1</td><td>$60</td></tr>
+    <tr><td>Standard</td><td>1 hr</td><td>15</td><td>1–2</td><td>$100</td></tr>
+    <tr><td>Deluxe</td><td>90 min</td><td>25</td><td>Up to 3</td><td>$150</td></tr>
+  </table>
+
+  <h3>Automotive Shoots</h3>
+  <table class="pricing-table">
+    <tr><th>Package</th><th>What's Included</th><th>Price</th></tr>
+    <tr><td>Basic</td><td>5 exterior shots</td><td>$75</td></tr>
+    <tr><td>Standard</td><td>10 shots + rolling shot</td><td>$120</td></tr>
+    <tr><td>Premium</td><td>15+ shots + rolling + drone*</td><td>$180+</td></tr>
+  </table>
+
+  <h3>Real Estate / Architecture</h3>
+  <table class="pricing-table">
+    <tr><th>Type</th><th>What's Included</th><th>Price</th></tr>
+    <tr><td>Small Property</td><td>10–15 edited images</td><td>$100</td></tr>
+    <tr><td>Medium Property</td><td>20–30 images</td><td>$150</td></tr>
+    <tr><td>Large / Custom</td><td>Full coverage + drone*</td><td>Starts at $200</td></tr>
+  </table>
+
+  <p>*Drone photography coming soon!</p>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <p>Hey, I'm Justin Kemp — a photographer based in Indianapolis. I specialize in portraits, cars, nature, and architectural shots.</p>
+  <p>Whether you're looking to update your professional image, show off your ride, or capture a special moment, I’ve got you covered.</p>
+  <p>I shoot with a Canon EOS M50 and believe it’s not about the gear — it’s all about the angles.</p>
 </section>
 
 <section id="contact">
@@ -325,4 +344,3 @@
 
 </body>
 </html>
-
